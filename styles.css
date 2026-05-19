@@ -810,6 +810,7 @@ section.block.no-border { border-top: 0; }
   padding: 1rem;
   display: grid; place-items: center;
   position: relative;
+   overflow: hidden;
   transition: border-color 0.3s ease;
 }
 .product-strip__item:hover { border-color: var(--brand); }
@@ -827,10 +828,16 @@ section.block.no-border { border-top: 0; }
 }
 
 .product-strip__item img {
-  max-width: 100%;
-  max-height: calc(100% - 22px);
+  width: auto;
+  height: 125px;
   object-fit: contain;
+  background: transparent !important;
+  mix-blend-mode: multiply;
+  display: block;
+  margin: auto;
+  transform: translateY(-6px);
 }
+
 
 /* ─── PRODUCT GRID (brand pages) ─────────────────────────────── */
 .product-grid {
@@ -1484,4 +1491,8 @@ footer.foot { border-top: var(--rule); padding: clamp(2.5rem, 5vh, 3.5rem) 0 1.5
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
   .map-dubai-ring, .live-dot, .product-strip__track { animation: none; }
+}
+.logo img{
+  height:40px;
+  width:auto;
 }
